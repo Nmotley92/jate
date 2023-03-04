@@ -18,7 +18,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'TODOs List'
+        title: 'Jate - Just Another Text Editor',
       }),
 
       new InjectManifest({
@@ -55,7 +55,6 @@ module.exports = () => {
 
     module: {
       rules: [
-        // TODO: Add CSS loaders and babel to webpack.
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
