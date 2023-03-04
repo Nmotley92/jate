@@ -13,6 +13,7 @@ module.exports = () => {
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
+      publicPath: './' // Added publicPath
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -33,7 +34,7 @@ module.exports = () => {
         background_color: '#01579b',
         theme_color: '#ffffff',
         'theme-color': '#ffffff',
-        start_url: '../index.html',
+        start_url: './index.html',
         display: 'standalone',
         icons: [
           {
