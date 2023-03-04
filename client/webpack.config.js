@@ -21,8 +21,8 @@ module.exports = () => {
       }),
 
       new InjectManifest({
-        swSrc: './src/js/sw.js', // Path to your service worker file
-        swDest: 'sw.js', // Name of the generated service worker file
+        swSrc: './src-sw.js', // Path to your service worker file
+        swDest: 'src-sw.js', // Name of the generated service worker file
       }),
 
       new WebpackPwaManifest({
