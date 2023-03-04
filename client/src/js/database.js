@@ -11,8 +11,8 @@ const initdb = async () =>
       console.log('jate database created');
     },
   });
-
-// TODO: Add logic to a method that accepts some content and adds it to the database
+  
+// puts the content in the database but uses put instead of add so it will update the last item in the database
 export const putDb = async (content) => {
   const db = await initdb();
   const tx = db.transaction('jate', 'readwrite');
@@ -24,8 +24,7 @@ export const putDb = async (content) => {
 
 
 
-// TODO: Add logic for a method that gets all the content from the database
-
+// gets the last item in the database
 export const getDb = async () => {
   const db = await initdb();
   const tx = db.transaction('jate', 'readonly');
