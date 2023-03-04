@@ -36,12 +36,12 @@
       "type": "image/png"
     }
   ],
-  "name": "Jate's PWA",
-  "short_name": "jate",
+  "name": "JATE - Just Another Text Editor",
+  "short_name": "JATE",
   "orientation": "portrait",
   "display": "standalone",
-  "start_url": "./index.html",
-  "description": "Just another text editor",
+  "start_url": "./",
+  "description": "A simple text editor for the web",
   "background_color": "#01579b",
   "theme_color": "#ffffff",
   "theme-color": "#ffffff"

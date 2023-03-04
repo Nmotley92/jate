@@ -28,13 +28,13 @@ module.exports = () => {
 
       new WebpackPwaManifest({
         fingerprints: false,
-        name: 'Jate\'s PWA',
-        short_name: 'jate',
-        description: 'Just another text editor',
+        name: 'JATE - Just Another Text Editor',
+        short_name: 'JATE',
+        description: 'A simple text editor for the web',
         background_color: '#01579b',
         theme_color: '#ffffff',
         'theme-color': '#ffffff',
-        start_url: './index.html',
+        start_url: './',
         display: 'standalone',
         icons: [
           {

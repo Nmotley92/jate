@@ -12,15 +12,16 @@ const initdb = async () =>
     },
   });
 
-  export const putDb = async (content) => {
-    const db = await initdb();
-    const tx = db.transaction('jate', 'readwrite');
-    const store = tx.objectStore('jate');
-    await store.add({ content });
-    await tx.complete;
-    console.log('Content added to database');
-  }
-  
+// TODO: Add logic to a method that accepts some content and adds it to the database
+export const putDb = async (content) => {
+  const db = await initdb();
+  const tx = db.transaction('jate', 'readwrite');
+  const store = tx.objectStore('jate');
+  await store.put({ content });
+  await tx.complete;
+  console.log('Content added to database');
+}
+
 
 
 // TODO: Add logic for a method that gets all the content from the database
@@ -29,10 +30,10 @@ export const getDb = async () => {
   const db = await initdb();
   const tx = db.transaction('jate', 'readonly');
   const store = tx.objectStore('jate');
-  const content = await store.getAll();
+  const allContent = await store.getAll();
   await tx.complete;
-  console.log('Content retrieved from database');
-  return content;
+  console.log('All content retrieved from database:', allContent);
+  return allContent.length ? allContent[allContent.length - 1].content : null
 };
 
 
