@@ -50,8 +50,3 @@ offlineFallback({
 
 registerRoute(({ request }) => request.mode === 'navigate', assetCache);
 
-
-
-
-
-registerRoute();
