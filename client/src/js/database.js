@@ -11,17 +11,16 @@ const initdb = async () =>
       console.log('jate database created');
     },
   });
-
+  
 // puts the content in the database but uses put instead of add so it will update the last item in the database
 export const putDb = async (content) => {
   const db = await initdb();
   const tx = db.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
-  const putRequest = store.put({ content }, 1); // 1 is the key for the record you want to overwrite
+  await store.put({ content }, 1);
   await tx.complete;
   console.log('Content added to database');
 }
-
 
 
 
