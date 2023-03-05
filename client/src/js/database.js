@@ -13,23 +13,11 @@ const initdb = async () =>
   });
   
 // puts the content in the database but uses put instead of add so it will update the last item in the database
-export const putDb = async (id, content) => {
+export const putDb = async (content) => {
   const db = await initdb();
   const tx = db.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
-
-  // Check if a record with the same ID already exists
-  const existingRecord = await store.get(id);
-
-  // If it does, update the content of the existing record
-  if (existingRecord) {
-    existingRecord.content = content;
-    await store.put(existingRecord);
-  } else {
-    // Otherwise, create a new record with the specified ID and content
-    await store.put({ id, content });
-  }
-
+  await store.put({ content }, 1);
   await tx.complete;
   console.log('Content added to database');
 }
