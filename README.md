@@ -46,6 +46,7 @@ npm start:dev
 ```
 
 ## Visuals
+<img width="1193" alt="Screenshot 2023-03-08 190405" src="https://user-images.githubusercontent.com/114119193/223888425-253931ef-9599-4628-9d93-167aba40677e.png">
 
 
 
